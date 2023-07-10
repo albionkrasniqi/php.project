@@ -436,32 +436,90 @@ echo "i love $Cerlebrity"
 
    // echo $student1->HasHonors();
     echo $student2->HasHonors();
-    */
+   
     ?>
 
 
 
 
-<?php 
-class Movie{
+    <?php
+class Movie
+{
     public $title;
-    public $rating;
+    private $rating;
 
-    function __construct($title,$rating){
-        $this->title=$title;
-        $this->rating=$rating;
+    public function __construct($title, $rating)
+    {
+        $this->title = $title;
+        $this->setrating($rating);
+    }
 
+    public function getrating()
+    {
+        return $this->rating;
+    }
+
+    public function setrating($rating)
+    {
+        if ($rating == "G" || $rating == "PG" || $rating == "PG-13" || $rating == "R" || $rating == "NR") {
+            $this->rating = $rating;
+        } else {
+            $this->rating = "NR";
+        }
     }
 }
-$avangers=new Movie("Avangers")
+
+$avengers = new Movie("Avengers", "PG-13");
+$avengers->setrating("Rasa ");
+
+echo $avengers->getrating();
+ */
+    ?>
 
 
 
-?>
+    <?php
 
+    class chef
+    {
 
+        function makechicken()
+        {
+            echo "the chef makes chicken <br>";
 
+        }
+        function makesalad()
+        {
+            echo "the chef makes salad <br>";
 
+        }
+        function makespecialdish()
+        {
+            echo "the chef makes bbq ribs <br>";
+
+        }
+
+    }
+
+    class italianchef extends chef
+    {
+        function makepasta()
+        {
+            echo "the chef makes pasta <br>";
+
+        }
+        function makespecialdish()
+        {
+            echo "the chef makes chicken parm <br>";
+        }
+    }
+    $chef = new chef();
+    $chef->makespecialdish();
+    $italianchef = new italianchef();
+    // $italianchef->makepasta();
+    $italianchef->makespecialdish();
+
+    ?>
 
 
 
