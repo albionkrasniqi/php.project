@@ -403,7 +403,7 @@ echo "i love $Cerlebrity"
     //echo $book2->author;
     
     echo $book1->title;
-*/
+
 
 
     ?>
@@ -436,12 +436,28 @@ echo "i love $Cerlebrity"
 
    // echo $student1->HasHonors();
     echo $student2->HasHonors();
+    */
     ?>
 
 
 
 
+<?php 
+class Movie{
+    public $title;
+    public $rating;
 
+    function __construct($title,$rating){
+        $this->title=$title;
+        $this->rating=$rating;
+
+    }
+}
+$avangers=new Movie("Avangers")
+
+
+
+?>
 
 
 
