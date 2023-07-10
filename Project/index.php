@@ -89,21 +89,392 @@ $Cerlebrity=$_GET["Cerlebrity"];
 echo"roses are $color <br>";
 echo "$pluralnoun are blue <br>";
 echo "i love $Cerlebrity"
-*/
-
-?>
 
 
+    ?>
 
-<form action="index.php" method="get">
-        color:<input type="text" name="name">
+
+
+    <form action="index.php" method="post">
+        password:<input type="password" name="password">
         <br> <br>
-       
+
         <input type="submit">
 
-        
+
     </form>
-    <?php echo $_GET["name"]?>
+    <?php echo $_POST["password"] ;
+    
+    
+    
+    ?>
+
+    <?php
+
+    $friends = array("Kevin", "Karen", "Oscar", "Jim");
+    //  $friends[10]="Angela";
+    //   echo $friends[10];
+    $friends[4] = "Mike";
+    echo count($friends);
+
+
+
+
+    ?>
+    <form action="index.php" method="post">
+        apples:<input type="checkbox" name="fruits[]" value="apples"><br>
+        oranges:<input type="checkbox" name="fruits[]" value="oranges"><br>
+        pears:<input type="checkbox" name="fruits[]" value="pears"><br>
+
+
+        <input type="submit">
+    </form>
+
+    <?php
+    $fruits = $_POST["fruits"];
+    echo $fruits[3]
+
+    ?>
+    <form action="index.php" method="post">
+        <input type="text" name="student">
+        <input type="submit">
+    </form>
+    <?php
+    $grades = array("Jim" => "A+", "Pam" => "B-", "Oscar" => "C+");
+    echo $grades[$_POST["student"]];
+
+    ?>
+
+    <?php 
+    function sayhi($name,$age){
+        echo "hello $name<br>";
+    }
+
+    sayhi("Albion",40);
+    sayhi("Blinera",38);
+    sayhi("Jetullah",41);
+  
+    ?>
+    <?php 
+    function cube($num)
+    {
+       return  $num*$num*$num;
+
+
+    }
+    $cuberesult=cube(4);
+    echo $cuberesult;  
+    */
+
+    ?>
+
+    <?php
+    $ismale = true;
+    $istall = false;
+    /*if($ismale){
+
+        //echo "you are male ";
+
+    }
+    if($ismale&&$istall){
+
+        echo "you are a tall  male <br>";
+        
+    }else{
+        echo "you are not male<br>";
+    }
+
+    if($ismale||$istall){
+
+        echo "you are a tall  male <br>";
+        
+    }else{
+        echo "you are not male<br>";
+    }
+    if($ismale&&$istall){
+        echo "you are a tall  male <br> ";
+    }elseif($ismale&&!$istall){ 
+        echo "you are a short male<br>";}
+
+    else{
+        echo "you are not male<br>";
+    }
+
+    if($ismale&&$istall){
+        echo "you are a tall  male <br> ";
+    }elseif($ismale&&!$istall){ 
+        echo "you are a short male<br>";
+    }
+    elseif(!$ismale&&$istall){
+        echo "you are not  male but tall <br> ";
+    }else{
+        echo "you are not  male and tall <br> ";
+    }
+
+
+
+     ?>
+    <?php 
+
+     //echo max(3,6);
+    //function getmax($num1 ,$num2){
+      // if($num1>$num2){
+            
+        //    return $num1;
+        //}else {
+           // return $num2;
+       // }
+
+    //}
+    function getmax($num1,$num2,$num3){
+      
+        if($num1>=$num2&& $num1>=$num3){
+            
+            return $num1;
+        }elseif($num2>=$num1 && $num2>=$num3) {
+            return $num2;
+        }else{ return $num3;
+        }
+
+    }
+    echo getmax(3000,2999,1);
+
+
+  
+
+
+
+
+    ?>
+    <form action="index.php" method="post">
+        1st number:<input type="number" step="0.1" name="num1">
+        OP:<input type="number " name="op" id="">
+        2nd number:<input type="number " name="num2">
+        <input type="submit">
+    </form>
+    <?php
+    $num1 = $_POST["num1"];
+    $num2 = $_POST["num2"];
+    $op = $_POST["op"];
+
+    if ($op == "+") {
+        echo $num1 + $num2;
+    } elseif ($op == "-") {
+        echo $num1 - $num2;
+    } elseif ($op == "/") {
+        echo $num1 / $num2;
+    } elseif ($op == "*") {
+        echo $num1 * $num2;
+    }else{ echo "invalid operator";
+    }
+
+
+  
+    ?>
+
+
+
+    <form action="index.php" method="post">
+        What was you grade?:<input type="text" name="grade">
+
+        <input type="submit">
+    </form>
+
+
+    <?php
+    $grade = $_POST["grade"];
+    switch ($grade) {
+        case "A":
+            echo "you did amazing";
+            break;
+        case "B":
+            echo "you did pretty good";
+            break;
+        case "C":
+            echo "bettger luck next time ";
+            break;
+        case "D":
+            echo "you did very bad ";
+            break;
+        case "F":
+            echo "YOU FAIL!";
+            break;
+        default:
+            echo "invalid grade";
+
+    }
+
+
+
+
+
+
+
+
+
+    ?>
+
+
+
+    <?php include "header.html"; ?>
+    <p>hello world
+    <p>
+    <?php include "footer.html"; 
+    
+
+    ?>
+
+    <?php
+    $title = "My first post";
+    $author = "Albion";
+    $wordcount = 400;
+
+    include "articleheader.php" 
+    
+    
+
+
+
+
+    ?>
+
+    <?php
+    $feetInMiles = 5280;
+    function sayhi($name)
+    {
+        echo "hello $name";
+    }
+
+    ?>
+    <?php
+    class book
+    {
+        var $title;
+        var $author;
+        var $pages;
+    }
+
+    $book1 = new book;
+    $book1->title = "harry potter";
+    $book1->author = "JK rowling<br>";
+    $book1->pages = 400;
+    echo $book1->author;
+
+
+
+    $book2 = new book;
+    $book2->title = "Lotr ";
+    $book2->author = "Tolkein<br>";
+    $book2->pages = 700;
+    echo $book2->author;
+
+    ?>
+
+    <?php
+
+    class book
+    {
+        var $title;
+        var $author;
+        var $pages;
+        function __construct($aTitile, $aAuthor, $aPages)
+        {
+            //  echo"$name <br>";
+            $this->title = $aTitile;
+            $this->author = $aAuthor;
+            $this->pages = $aPages;
+
+
+        }
+    }
+
+    $book1 = new book("harry potter<br>", "JK rowling<br>", 400);
+    //$book1->title = "harry potter";
+    //$book1->author = "JK rowling<br>";
+    //$book1->pages = 400;
+    //echo $book1->author;
+    $book1->title = "Hunger Games";
+
+
+    $book2 = new book("Lotr <br>", "Tolkein<br>", 700);
+    //$book2->title = "Lotr ";
+    //$book2->author = "Tolkein<br>";
+    //$book2->pages = 700;
+    //echo $book2->author;
+    
+    echo $book1->title;
+*/
+
+
+    ?>
+
+    <?php
+    class student
+    {
+        var $name;
+        var $major;
+        var $gpa;
+
+        function __construct($name, $major, $gpa)
+        {
+            $this->name = $name;
+            $this->major = $major;
+            $this->gpa = $gpa;
+
+        }
+        function HasHonors()
+        {
+            if ($this->gpa >= 3.5) {
+                return "true";
+            }
+            return "false";
+        }
+    }
+
+    $student1 = new student("Jim", "Busines", 2.8);
+    $student2 = new student("Pam", "Art", 3.6);
+
+   // echo $student1->HasHonors();
+    echo $student2->HasHonors();
+    ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
